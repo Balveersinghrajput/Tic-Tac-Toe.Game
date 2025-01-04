@@ -1,34 +1,35 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color:#1c3036 ;
+body {
+    background-color: #1c3036;
     text-align: center;
-    
+    font-family: Arial, sans-serif;
 }
-h1{
+h1 {
     color: rgb(4, 15, 27);
+    font-size: 2rem;
+    margin: 20px 0;
 }
-
-.cuntenar{
-    height: 70vh;
+.cuntenar {
+    height: auto;
     padding-top: 40px;
     display: flex;
     justify-content: center;
     text-align: center;
 }
-.main{
-    height: 60vmin;
-    width: 60vmin;
+.main {
+    height: auto;
+    width: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
-    gap:12px;
-
+    gap: 10px;
 }
-.box{
+.box {
     height: 18vmin;
     width: 18vmin;
     border-radius: 10px;
@@ -37,37 +38,65 @@ h1{
     font-size: 43px;
     background-color: rgb(234, 237, 239);
     color: rgb(7, 7, 7);
-
+    cursor: pointer;
 }
-
-#reset{
-    padding: 11px;
-    font-size: medium;
+#reset,
+#new_btn {
+    padding: 10px 20px;
+    font-size: 1rem;
     color: rgb(244, 247, 250);
     background-color: rgb(15, 15, 15);
     box-shadow: 0 0 2rem rgb(149, 146, 146);
     border-radius: 10px;
     border: none;
-    margin-right: 20px ;
-    
+    margin: 10px;
+    cursor: pointer;
 }
-
-#new_btn{
-    padding: 11px;
-    font-size: medium;
-    color: rgb(244, 247, 250);
-    background-color: rgb(15, 15, 15);
-    box-shadow: 0 0 2rem rgb(149, 146, 146);
-    border-radius: 10px;
-    border: none;
+.msg {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    margin: 10px;
 }
-
-.msg{
-   color: rgb(255, 255, 255);
-   font-size: 20px;
-   margin: 10px;
-}
-
-.hide{
+.hide {
     display: none;
+}
+
+/* Tablet Responsiveness (768px and below) */
+@media (max-width: 768px) {
+    .box {
+        height: 24vmin;
+        width: 24vmin;
+        font-size: 36px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    #reset,
+    #new_btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+/* Mobile Responsiveness (480px and below) */
+@media (max-width: 480px) {
+    .main {
+        gap: 8px; /* Reduce gap between boxes */
+    }
+    .box {
+        height: 28vmin;
+        width: 28vmin;
+        font-size: 28px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    #reset,
+    #new_btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    .msg {
+        font-size: 1rem;
+    }
 }
