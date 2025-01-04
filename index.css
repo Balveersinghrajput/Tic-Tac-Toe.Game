@@ -1,102 +1,109 @@
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body {
     background-color: #1c3036;
     text-align: center;
+    margin: 0;
     font-family: Arial, sans-serif;
 }
+
 h1 {
     color: rgb(4, 15, 27);
     font-size: 2rem;
-    margin: 20px 0;
+    margin-top: 20px;
 }
+
 .cuntenar {
-    height: auto;
-    padding-top: 40px;
+    height: 70vh;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
 }
+
 .main {
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3x3 grid */
+    gap: 10px; /* Space between the boxes */
+    width: 90vmin; /* Ensure the grid fits within the viewport */
+    max-width: 400px; /* Prevent the grid from becoming too large */
 }
+
 .box {
-    height: 18vmin;
-    width: 18vmin;
+    height: 30vmin;
+    width: 30vmin;
+    max-height: 120px;
+    max-width: 120px;
     border-radius: 10px;
     border: none;
     box-shadow: 0 0 1rem rgb(149, 146, 146);
-    font-size: 43px;
+    font-size: 1.5rem;
     background-color: rgb(234, 237, 239);
     color: rgb(7, 7, 7);
     cursor: pointer;
 }
+
+.btns {
+    margin: 20px 0;
+}
+
 #reset,
 #new_btn {
     padding: 10px 20px;
     font-size: 1rem;
-    color: rgb(244, 247, 250);
+    color: #fff;
     background-color: rgb(15, 15, 15);
     box-shadow: 0 0 2rem rgb(149, 146, 146);
     border-radius: 10px;
     border: none;
-    margin: 10px;
+    margin: 0 10px;
     cursor: pointer;
 }
-.msg {
-    color: rgb(255, 255, 255);
-    font-size: 1.2rem;
-    margin: 10px;
+
+#reset:hover,
+#new_btn:hover {
+    background-color: rgb(30, 30, 30);
 }
+
+.msg {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
 .hide {
     display: none;
 }
 
-/* Tablet Responsiveness (768px and below) */
+/* Responsive Design */
 @media (max-width: 768px) {
     .box {
-        height: 24vmin;
-        width: 24vmin;
-        font-size: 36px;
+        height: 22vmin;
+        width: 22vmin;
+        max-height: 100px;
+        max-width: 100px;
+        font-size: 1.2rem;
     }
+
     h1 {
         font-size: 1.8rem;
     }
-    #reset,
-    #new_btn {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-    }
 }
 
-/* Mobile Responsiveness (480px and below) */
 @media (max-width: 480px) {
-    .main {
-        gap: 8px; /* Reduce gap between boxes */
-    }
     .box {
-        height: 28vmin;
-        width: 28vmin;
-        font-size: 28px;
+        height: 18vmin;
+        width: 18vmin;
+        max-height: 80px;
+        max-width: 80px;
+        font-size: 1rem;
     }
+
     h1 {
         font-size: 1.5rem;
     }
+
     #reset,
     #new_btn {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-    .msg {
-        font-size: 1rem;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
